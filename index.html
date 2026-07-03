@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Siren's Loot - Mahdia Medina</title>
+    <!-- Intégration d'une police élégante et moderne -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Effet de lueur sunkissed en arrière-plan -->
+    <div class="sun-glow"></div>
+
+    <main class="game-container">
+      <!-- ÉCRAN 0 : INSCRIPTION DE L'ÉQUIPE -->
+      <section id="step-0" class="game-step">
+        <h1 class="glam-title">Siren's Call</h1>
+        <p class="tagline">
+          L'or et le sel vous attendent dans les ruelles de Mahdia.
+        </p>
+        <div class="divider"></div>
+
+        <p class="instruction">
+          Inscrivez votre guilde de sirènes pour lier vos destins :
+        </p>
+        <div class="input-group">
+          <input
+            type="text"
+            id="team-name"
+            placeholder="Nom de votre équipe..."
+            autocomplete="off"
+          />
+        </div>
+        <button class="btn-bling" onclick="startGame()">
+          Entrer dans le Royaume ➔
+        </button>
+      </section>
+
+      <!-- ÉTAPE 1 : LE TISSEUR DE SOIE -->
+      <section id="step-1" class="game-step hidden">
+        <span class="step-badge">Quête I</span>
+        <h2 class="step-title">Les Fils d'Or du Tisseur</h2>
+        <p class="story-text">
+          Au cœur de la médina, un artisan tisse la soie comme on tisse les
+          légendes marines. Trouvez sa nef de bois et observez son œuvre.
+        </p>
+        <p class="riddle">
+          "Quel motif marin est brodé en fils d'or sur le tissu impérial ?"
+        </p>
+
+        <div class="input-group">
+          <input
+            type="text"
+            id="input-step1"
+            placeholder="Votre réponse..."
+            autocomplete="off"
+          />
+        </div>
+        <button class="btn-bling" onclick="checkStep1()">
+          Soumettre l'Offrande
+        </button>
+        <p id="error-1" class="error-msg hidden">
+          ✨ Les vagues rejettent ce mot. Retentez votre chance ou observez
+          mieux l'atelier.
+        </p>
+      </section>
+
+      <!-- ÉTAPE 2 : LE BIJOUTIER D'ARGENT -->
+      <section id="step-2" class="game-step hidden">
+        <span class="step-badge">Quête II</span>
+        <h2 class="step-title">Les Larmes d'Argent</h2>
+        <p class="story-text">
+          Le tisseur vous a libéré. Dirigez-vous vers l'artisan bijoutier, là où
+          le métal brille comme l'écume sous le soleil couchant de Mahdia.
+        </p>
+        <p class="riddle">
+          "Comptez le nombre de poissons gravés sur le grand coffre en argent à
+          l'entrée."
+        </p>
+
+        <div class="input-group">
+          <input
+            type="number"
+            id="input-step2"
+            placeholder="Le nombre exact..."
+            autocomplete="off"
+          />
+        </div>
+        <button class="btn-bling" onclick="checkStep2()">
+          Ouvrir le Coffre
+        </button>
+        <p id="error-2" class="error-msg hidden">
+          ✨ L'argent reste terni. Le compte n'est pas bon, fouillez les reflets
+          métalliques.
+        </p>
+      </section>
+
+      <!-- ÉCRAN FINAL : LE TRÉSOR -->
+      <section id="step-final" class="game-step hidden">
+        <h1 class="glam-title gold">Quête Accomplie</h1>
+        <p class="tagline">
+          Le sortilège est brisé, les sirènes sont libérées.
+        </p>
+        <div class="divider"></div>
+        <p class="story-text">
+          Vous avez maîtrisé l'artisanat de Mahdia. Votre ultime récompense vous
+          attend là où la terre s'arrête et où l'océan commence.
+        </p>
+        <div class="final-destination">
+          <p>
+            Rejoignez le <strong>Phare de Mahdia (Cap Africa)</strong> avant le
+            coucher du soleil.
+          </p>
+          <p class="gold-text">
+            Présentez cet écran aux gardiens du camping pour réclamer votre
+            trésor.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
