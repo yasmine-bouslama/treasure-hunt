@@ -3,6 +3,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent; /* pas de flash gris au tap sur mobile */
+}
+
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%; /* empêche Safari iOS d'agrandir le texte tout seul */
+  text-size-adjust: 100%;
 }
 
 body {
@@ -28,19 +35,26 @@ body {
   min-height: 100vh;
   min-height: 100dvh; /* meilleure hauteur sur mobile (barres d'adresse) */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
+  overflow-y: auto; /* permet de scroller si le contenu dépasse l'écran */
   position: relative;
   padding: 16px;
+  /* respecte l'encoche / la zone sûre des téléphones (notch, coins arrondis) */
+  padding-top: max(16px, env(safe-area-inset-top));
+  padding-bottom: max(16px, env(safe-area-inset-bottom));
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
 }
 
 /* LUEURS ET REFLETS COUCHER DE SOLEIL EN ARRIÈRE-PLAN */
-body::before {
-  content: "";
-  position: absolute;
-  width: 150%;
-  height: 150%;
+.sun-glow {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   background:
     radial-gradient(
       circle at 20% 15%,
@@ -53,13 +67,16 @@ body::before {
       transparent 40%
     );
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
 }
 
 /* CONTENEUR PRINCIPAL : EFFET VERRE CHAUD (GLASSMORPHISM CORAIL/OR) */
 .game-container {
   width: 90%;
   max-width: 450px;
+  max-height: calc(100dvh - 32px); /* ne dépasse jamais l'écran visible */
+  overflow-y: auto; /* scroll interne si le contenu d'une étape est long */
+  -webkit-overflow-scrolling: touch;
 
   /* Effet givré pêche/corail lumineux */
   background: rgba(255, 220, 180, 0.12);
@@ -236,6 +253,7 @@ input:focus {
   box-shadow: 0 4px 20px rgba(230, 90, 60, 0.4);
   transition: all 0.4s ease;
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation; /* supprime le délai de tap sur mobile */
 }
 
 .btn-bling:hover {
