@@ -348,8 +348,7 @@ input:focus {
 @media (max-width: 420px) {
   body {
     padding: 10px;
-    align-items: flex-start; /* évite que le contenu soit coupé en haut si le clavier s'ouvre */
-    padding-top: 30px;
+    /* reste centré verticalement ; .game-container gère son propre scroll interne si besoin */
   }
 
   .game-container {
