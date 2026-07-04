@@ -2,7 +2,14 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#6a1b6b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title>The Siren's Loot - Mahdia Medina</title>
     <!-- Intégration d'une police élégante et moderne -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,6 +42,8 @@
             id="team-name"
             placeholder="Nom de votre équipe..."
             autocomplete="off"
+            autocapitalize="words"
+            enterkeyhint="go"
           />
         </div>
         <button class="btn-bling" onclick="startGame()">
@@ -60,6 +69,8 @@
             id="input-step1"
             placeholder="Votre réponse..."
             autocomplete="off"
+            autocapitalize="words"
+            enterkeyhint="done"
           />
         </div>
         <button class="btn-bling" onclick="checkStep1()">
@@ -87,9 +98,12 @@
         <div class="input-group">
           <input
             type="number"
+            inputmode="numeric"
+            pattern="[0-9]*"
             id="input-step2"
             placeholder="Le nombre exact..."
             autocomplete="off"
+            enterkeyhint="done"
           />
         </div>
         <button class="btn-bling" onclick="checkStep2()">
