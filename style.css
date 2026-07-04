@@ -11,20 +11,31 @@ body {
   background: url("font.jpg") no-repeat center center fixed;
   background-size: cover;
 
-  /* BACKGROUND DE SECOURS (Dégradé iridescent si l'image ne charge pas) */
-  background-color: #0d1f2d;
+  /* BACKGROUND DE SECOURS (Dégradé coucher de soleil si l'image ne charge pas) */
+  background-color: #ff6a3d;
+  background-image: linear-gradient(
+    160deg,
+    #2b0f3a 0%,
+    #6a1b6b 20%,
+    #b5316e 40%,
+    #e8564a 60%,
+    #f4813f 80%,
+    #ffb84d 100%
+  );
 
-  color: #fff0f5; /* Blanc nacré rosé */
+  color: #fff3e6; /* Blanc pêche chaud */
   font-family: "Montserrat", sans-serif;
   min-height: 100vh;
+  min-height: 100dvh; /* meilleure hauteur sur mobile (barres d'adresse) */
   display: flex;
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
   position: relative;
+  padding: 16px;
 }
 
-/* LUEURS ET REFLETS IRIDESCENTS EN ARRIÈRE-PLAN */
+/* LUEURS ET REFLETS COUCHER DE SOLEIL EN ARRIÈRE-PLAN */
 body::before {
   content: "";
   position: absolute;
@@ -32,35 +43,35 @@ body::before {
   height: 150%;
   background:
     radial-gradient(
-      circle at 20% 20%,
-      rgba(255, 192, 203, 0.25) 0%,
+      circle at 20% 15%,
+      rgba(255, 200, 120, 0.35) 0%,
       transparent 40%
     ),
     radial-gradient(
-      circle at 80% 80%,
-      rgba(135, 206, 250, 0.25) 0%,
+      circle at 80% 85%,
+      rgba(255, 80, 90, 0.3) 0%,
       transparent 40%
     );
   pointer-events: none;
   z-index: 1;
 }
 
-/* CONTENEUR PRINCIPAL : EFFET COQUILLE DE NACRE (GLASSMORPHISM ROSE/AQUA) */
+/* CONTENEUR PRINCIPAL : EFFET VERRE CHAUD (GLASSMORPHISM CORAIL/OR) */
 .game-container {
   width: 90%;
   max-width: 450px;
 
-  /* Effet givré rose/perle ultra-lumineux */
-  background: rgba(255, 240, 245, 0.12);
+  /* Effet givré pêche/corail lumineux */
+  background: rgba(255, 220, 180, 0.12);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 
-  /* Bordure scintillante comme un bijou */
-  border: 2px solid rgba(146, 9, 238, 0.3);
+  /* Bordure scintillante comme un bijou de soleil couchant */
+  border: 2px solid rgba(255, 140, 60, 0.35);
   box-shadow:
-    0 20px 50px rgba(13, 31, 45, 0.6),
-    0 0 40px rgba(252, 192, 255, 0.2),
-    inset 0 0 20px rgba(181, 5, 245, 0.2);
+    0 20px 50px rgba(43, 15, 25, 0.6),
+    0 0 40px rgba(255, 150, 90, 0.25),
+    inset 0 0 20px rgba(255, 90, 90, 0.2);
 
   border-radius: 30px;
   padding: 45px 25px;
@@ -68,7 +79,7 @@ body::before {
   transition: all 0.5s ease;
 }
 
-/* TITRES AVEC EFFET MÉTALLIQUE IRIDESCENT (OR, ROSE, AQUA) */
+/* TITRES AVEC EFFET MÉTALLIQUE COUCHER DE SOLEIL (OR, CORAIL, MAGENTA) */
 .glam-title {
   font-family: "Cinzel", serif;
   font-size: 2.6rem;
@@ -77,13 +88,13 @@ body::before {
   text-transform: uppercase;
   text-align: center;
 
-  /* Dégradé métallique inspiré des coquillages brillants de theme.jpg */
+  /* Dégradé métallique inspiré d'un coucher de soleil */
   background: linear-gradient(
     135deg,
-    #ffffff 0%,
-    #8c00ff 35%,
-    #37cfe3 70%,
-    #ff00fb 100%
+    #fff5d6 0%,
+    #ffb347 35%,
+    #ff5e62 70%,
+    #d6336c 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -94,7 +105,7 @@ body::before {
 
 /* Titre Or Sunkissed */
 .gold {
-  background: linear-gradient(135deg, #d002f9 0%, #ff00bb 50%, #a703ff 100%);
+  background: linear-gradient(135deg, #ffd166 0%, #ff7e5f 50%, #e63e6d 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -103,29 +114,29 @@ body::before {
   font-family: "Cinzel", serif;
   font-size: 1.7rem;
   letter-spacing: 1px;
-  color: #ffffff;
+  color: #fff3e6;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   margin-bottom: 15px;
 }
 
-/* BADGE PETITE SIRÈNE PREMIUM */
+/* BADGE PREMIUM COUCHER DE SOLEIL */
 .step-badge {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: #4c00ff; /* Or brillant */
-  background: rgba(108, 6, 225, 0.2); /* Nuance rosée */
-  border: 1px solid rgba(191, 0, 255, 0.6);
+  color: #ffe0b3; /* Or clair brillant */
+  background: rgba(255, 126, 95, 0.2); /* Nuance corail */
+  border: 1px solid rgba(255, 150, 90, 0.6);
   padding: 6px 16px;
   border-radius: 50px;
   margin-bottom: 25px;
   font-weight: 600;
-  box-shadow: 0 0 10px rgba(225, 0, 255, 0.481);
+  box-shadow: 0 0 10px rgba(255, 110, 90, 0.48);
 }
 
 .tagline {
   font-size: 0.95rem;
-  color: #f5e0fa;
+  color: #ffe9d6;
   font-style: italic;
   letter-spacing: 1px;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
@@ -134,7 +145,7 @@ body::before {
 .divider {
   width: 80px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #3700ff, transparent);
+  background: linear-gradient(90deg, transparent, #ff7e5f, transparent);
   margin: 20px auto;
 }
 
@@ -154,7 +165,7 @@ body::before {
 .story-text {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #f0f8ff; /* Blanc écume */
+  color: #fff3e6; /* Blanc chaud */
   margin-bottom: 20px;
   font-weight: 300;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
@@ -163,11 +174,11 @@ body::before {
 .riddle {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #b5b0ff; /* Jaune sable doré clair */
-  background: rgba(13, 31, 45, 0.4);
+  color: #ffd6a5; /* Doré sable pêche */
+  background: rgba(43, 15, 25, 0.4);
   padding: 12px 15px;
   border-radius: 12px;
-  border-left: 3px solid #ffc0cb;
+  border-left: 3px solid #ff8c5a;
   margin-bottom: 25px;
   letter-spacing: 0.5px;
   line-height: 1.5;
@@ -183,16 +194,16 @@ input {
   width: 100%;
   padding: 18px;
   background: rgba(
-    13,
-    31,
-    45,
+    43,
+    15,
+    25,
     0.85
   ); /* Fond sombre contrasté pour lisibilité */
-  border: 2px solid rgba(170, 12, 223, 0.4);
+  border: 2px solid rgba(255, 140, 80, 0.4);
   border-radius: 16px;
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
+  font-size: 16px; /* évite le zoom automatique sur iOS */
   text-align: center;
   letter-spacing: 1px;
   transition: all 0.3s ease;
@@ -200,35 +211,37 @@ input {
 
 input:focus {
   outline: none;
-  border-color: #ee00ff;
-  box-shadow: 0 0 15px rgba(255, 0, 230, 0.4);
-  background: #f401e037;
+  border-color: #ff6f61;
+  box-shadow: 0 0 15px rgba(255, 130, 90, 0.4);
+  background: rgba(255, 111, 97, 0.15);
 }
 
-/* BOUTON ULTRA-GLAM SCINTILLANT (NACRE ET OR) */
+/* BOUTON ULTRA-GLAM SCINTILLANT (COUCHER DE SOLEIL) */
 .btn-bling {
   width: 100%;
   padding: 18px;
-  /* Dégradé or-rose métallique opulent */
-  background: linear-gradient(135deg, #2600ff 0%, #ffc0cb 50%, #a708f0 100%);
+  min-height: 48px; /* zone tactile confortable sur mobile */
+  /* Dégradé corail-or métallique opulent */
+  background: linear-gradient(135deg, #ffb347 0%, #ff7e5f 50%, #d6336c 100%);
   background-size: 200% auto;
   border: none;
   border-radius: 16px;
-  color: #0d1f2d; /* Écrit en sombre brillant */
+  color: #2b0f19; /* Écrit en sombre brillant */
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(200, 7, 243, 0.4);
+  box-shadow: 0 4px 20px rgba(230, 90, 60, 0.4);
   transition: all 0.4s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn-bling:hover {
   background-position: right center; /* Fait glisser le dégradé */
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255, 0, 208, 0.6);
+  box-shadow: 0 8px 25px rgba(255, 100, 70, 0.6);
   color: #000000;
 }
 
@@ -236,27 +249,27 @@ input:focus {
   transform: translateY(1px);
 }
 
-/* MESSAGES D'ERREUR (MAGIE ALERTE BRIGHT ROSE) */
+/* MESSAGES D'ERREUR (ALERTE ROUGE COUCHER DE SOLEIL) */
 .error-msg {
   margin-top: 18px;
   font-size: 0.9rem;
-  color: #ffb6c1; /* Rose clair vibrant */
-  background: rgba(220, 20, 60, 0.25);
+  color: #ffc9b3; /* Corail clair vibrant */
+  background: rgba(220, 60, 40, 0.25);
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid rgba(220, 20, 60, 0.4);
+  border: 1px solid rgba(220, 60, 40, 0.4);
   line-height: 1.4;
 }
 
-/* CADRE ÉCRAN FINAL (Sunkissed Treasure Box) */
+/* CADRE ÉCRAN FINAL (Sunset Treasure Box) */
 .final-destination {
-  background: rgba(255, 0, 208, 0.12);
-  border: 2px dashed #5d00ff;
+  background: rgba(255, 140, 80, 0.12);
+  border: 2px dashed #ff7e5f;
   padding: 25px 20px;
   border-radius: 18px;
   margin-top: 20px;
   width: 100%;
-  box-shadow: 0 0 20px rgba(255, 0, 230, 0.15);
+  box-shadow: 0 0 20px rgba(255, 130, 90, 0.15);
 }
 
 .final-destination p {
@@ -266,7 +279,7 @@ input:focus {
 }
 
 .final-destination strong {
-  color: #fbb0ff;
+  color: #ffd6a5;
   font-size: 1.15rem;
   letter-spacing: 0.5px;
 }
@@ -276,7 +289,7 @@ input:focus {
   font-weight: 600;
 }
 
-/* ANIMATIONS PARTICULES */
+/* ANIMATIONS */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -287,5 +300,116 @@ input:focus {
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
+  }
+}
+
+/* ================================ */
+/* RESPONSIVE MOBILE                */
+/* ================================ */
+
+/* Tablettes et petits laptops */
+@media (max-width: 600px) {
+  .game-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 35px 20px;
+    border-radius: 24px;
+  }
+
+  .glam-title {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .step-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* Téléphones standards */
+@media (max-width: 420px) {
+  body {
+    padding: 10px;
+    align-items: flex-start; /* évite que le contenu soit coupé en haut si le clavier s'ouvre */
+    padding-top: 30px;
+  }
+
+  .game-container {
+    padding: 30px 16px;
+    border-radius: 20px;
+  }
+
+  .glam-title {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+
+  .step-badge {
+    font-size: 0.65rem;
+    padding: 5px 12px;
+    letter-spacing: 2px;
+  }
+
+  .tagline {
+    font-size: 0.85rem;
+  }
+
+  .story-text {
+    font-size: 0.88rem;
+  }
+
+  .riddle {
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
+
+  input,
+  .btn-bling {
+    padding: 15px;
+    font-size: 0.95rem;
+  }
+
+  .final-destination {
+    padding: 18px 14px;
+  }
+
+  .final-destination strong {
+    font-size: 1rem;
+  }
+}
+
+/* Très petits écrans (ex: iPhone SE) */
+@media (max-width: 340px) {
+  .glam-title {
+    font-size: 1.4rem;
+  }
+
+  .game-container {
+    padding: 24px 12px;
+  }
+}
+
+/* Mode paysage sur mobile : évite un design trop écrasé */
+@media (max-height: 480px) and (orientation: landscape) {
+  body {
+    align-items: flex-start;
+    padding-top: 12px;
+  }
+
+  .game-container {
+    padding: 20px 18px;
+  }
+
+  .glam-title {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+  }
+
+  .step-badge {
+    margin-bottom: 12px;
+  }
+
+  .divider {
+    margin: 10px auto;
   }
 }
