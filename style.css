@@ -13,22 +13,24 @@ html {
 }
 
 body {
-  /* SI TU AS UNE IMAGE DE FOND (Ex: theme.jpg ou un export Canva) :
-       Décommente la ligne ci-dessous et assure-toi que l'image est dans le même dossier */
-  background: url("font.jpg") no-repeat center center fixed;
-  background-size: cover;
-
-  /* BACKGROUND DE SECOURS (Dégradé coucher de soleil si l'image ne charge pas) */
+  /* Deux couches empilées : la photo au-dessus, le dégradé sunset en dessous.
+     Si "font.jpg" charge, tu vois la photo. Si elle est absente/introuvable,
+     cette couche devient transparente et laisse voir le dégradé en fallback. */
+  background-image: url("font.jpg"),
+    linear-gradient(
+      160deg,
+      #2b0f3a 0%,
+      #6a1b6b 20%,
+      #b5316e 40%,
+      #e8564a 60%,
+      #f4813f 80%,
+      #ffb84d 100%
+    );
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, center center;
+  background-size: cover, cover;
+  background-attachment: fixed, fixed;
   background-color: #ff6a3d;
-  background-image: linear-gradient(
-    160deg,
-    #2b0f3a 0%,
-    #6a1b6b 20%,
-    #b5316e 40%,
-    #e8564a 60%,
-    #f4813f 80%,
-    #ffb84d 100%
-  );
 
   color: #fff3e6; /* Blanc pêche chaud */
   font-family: "Montserrat", sans-serif;
